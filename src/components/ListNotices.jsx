@@ -11,6 +11,7 @@ const ListNotices = (props) => {
                     <button
                         className="ListNotices-btn-delete"
                         onClick={() => {
+                            // Utilizando a function passada como props
                             props.fcDelNotice(props.index);
                         }}
                     >

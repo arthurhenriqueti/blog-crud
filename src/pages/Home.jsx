@@ -8,13 +8,7 @@ const Home = () => {
     const [author, setAuthor] = useState("");
     const [body, setBody] = useState("");
 
-    const [notices, setNotices] = useState([
-        {
-            title: "Esse é o meu blog!",
-            author: "Arthur Henrique",
-            body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eos voluptate quibusdam odit architecto mollitia dolore ex suscipit commodi ut reprehenderit aliquid similique repellendus ab labore, est culpa porro. Enim!",
-        },
-    ]);
+    const [notices, setNotices] = useState([]);
 
     const showForm = () => {
         const element = document.getElementsByClassName("home-form")[0];
@@ -74,6 +68,7 @@ const Home = () => {
                                     <ListNotices
                                         items={element}
                                         index={index}
+                                        // Passando a function como props
                                         fcDelNotice={() => {
                                             delNotice(index);
                                         }}
