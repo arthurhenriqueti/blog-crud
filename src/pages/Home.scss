@@ -1,0 +1,36 @@
+.home-area {
+    width: 100%;
+    min-height: calc(100vh - 90px);
+    background-color: #f3f3f3;
+
+    .home-form {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        max-width: 200px;
+        height: 200px;
+        background-color: #fff;
+    }
+
+    .home-list {
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            margin-top: 20px;
+        }
+    }
+
+    .home-btn-area {
+        margin-top: 20px;
+
+        .home-btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            background-color: #06aa48;
+            color: #fff;
+            border: 0px;
+            cursor: pointer;
+        }
+    }
+}
