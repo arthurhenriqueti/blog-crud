@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import Header from "../components/Header";
 import ListNotices from "../components/ListNotices";
 import "./Home.scss";
@@ -20,6 +20,11 @@ const Home = () => {
         }
     };
 
+    const hideForm = () => {
+        const element = document.getElementsByClassName("home-form")[0];
+        element.style.display = "none";
+    };
+
     const addNotice = (e) => {
         e.preventDefault();
         setNotices([
@@ -31,17 +36,31 @@ const Home = () => {
             },
         ]);
         alert("Notícia cadastrada com sucesso!");
+        hideForm();
         console.log(notices);
     };
 
-    const delNotice = useCallback((index) => {
+    const delNotice = (index) => {
         // Copiando o array
         const newArray = notices.slice();
         // Removendo o elemento do index atual
         newArray.splice(index, 1);
         setNotices(newArray);
         alert("Notícia deletada com sucesso!");
-    });
+    };
+
+    const editNotice = (index, title, author, body) => {
+        // Copiando o array
+        const newArray = notices.slice();
+        // Removendo o elemento do index atual
+        newArray.splice(index, 1, {
+            title: title,
+            author: author,
+            body: body,
+        });
+        setNotices(newArray);
+        alert("Notícia alterada com sucesso!");
+    };
 
     const saveTitle = (e) => {
         setTitle(e.target.value);
@@ -64,16 +83,15 @@ const Home = () => {
                     {notices
                         .map((element, index) => {
                             return (
-                                <>
+                                <div key={index}>
                                     <ListNotices
                                         items={element}
                                         index={index}
                                         // Passando a function como props
-                                        fcDelNotice={() => {
-                                            delNotice(index);
-                                        }}
+                                        fcDelNotice={delNotice}
+                                        fcEditNotice={editNotice}
                                     />
-                                </>
+                                </div>
                             );
                         })
                         .reverse()}

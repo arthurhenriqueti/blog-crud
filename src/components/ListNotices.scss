@@ -1,4 +1,19 @@
 .ListNotices-area {
+    .ListNotices-form {
+        display: none;
+    }
+    .ListNotices-btn-edit,
+    .ListNotice-btn {
+        margin-top: 10px;
+        margin-right: 10px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        background-color: #1e4c9a;
+        color: #fff;
+        border: 0px;
+        cursor: pointer;
+        display: inline;
+    }
     .ListNotices-barr {
         margin-top: 20px;
         width: 100%;
