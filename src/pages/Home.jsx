@@ -7,6 +7,7 @@ const Home = () => {
     const [title, setTitle] = useState("");
     const [author, setAuthor] = useState("");
     const [body, setBody] = useState("");
+    const [image, setImage] = useState("");
 
     const [notices, setNotices] = useState([]);
 
@@ -39,6 +40,7 @@ const Home = () => {
                 title: title,
                 author: author,
                 body: body,
+                image: image,
             },
         ]);
         alert("Notícia cadastrada com sucesso!");
@@ -54,13 +56,14 @@ const Home = () => {
         alert("Notícia deletada com sucesso!");
     };
 
-    const editNotice = (index, title, author, body) => {
+    const editNotice = (index, title, author, body, image) => {
         const newArray = notices.slice();
-        // Removendo o elemento do index atual e adicionando um novo
+        // Removendo e adicionando um novo ao mesmo index
         newArray.splice(index, 1, {
             title: title,
             author: author,
             body: body,
+            image: image,
         });
         setNotices(newArray);
         alert("Notícia alterada com sucesso!");
@@ -79,6 +82,10 @@ const Home = () => {
         setBody(e.target.value);
     };
 
+    const saveImage = (e) => {
+        setImage(e.target.value);
+    };
+
     return (
         <>
             <Header />
@@ -92,7 +99,6 @@ const Home = () => {
                                     <ListNotices
                                         items={element}
                                         index={index}
-                                        // Passando a function como props
                                         fcDelNotice={delNotice}
                                         fcEditNotice={editNotice}
                                     />
@@ -129,6 +135,13 @@ const Home = () => {
                                 type="text"
                                 placeholder="Notícia"
                                 onChange={saveBody}
+                            />
+                        </div>
+                        <div>
+                            <input
+                                type="url"
+                                placeholder="URL da imagem"
+                                onChange={saveImage}
                             />
                         </div>
                         <div className="home-btn-area">

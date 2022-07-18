@@ -1,4 +1,27 @@
+.ListNotices-barr {
+    margin-top: 20px;
+    width: 100%;
+    height: 2px;
+    background-color: #cecece;
+}
+
 .ListNotices-area {
+    display: flex;
+    min-height: 250px;
+    justify-content: center;
+    align-items: center;
+
+    .ListNotices-img {
+        width: 330px;
+
+        img {
+            width: 300px;
+            object-fit: cover;
+        }
+    }
+    .ListNotices-txt {
+        flex: 1;
+    }
     .ListNotices-form {
         display: none;
     }
@@ -13,12 +36,6 @@
         border: 0px;
         cursor: pointer;
         display: inline;
-    }
-    .ListNotices-barr {
-        margin-top: 20px;
-        width: 100%;
-        height: 2px;
-        background-color: #cecece;
     }
     .ListNotices-btn-delete {
         margin-top: 10px;

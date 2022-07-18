@@ -5,6 +5,7 @@ const ListNotices = (props) => {
     const [title, setTitle] = useState("");
     const [author, setAuthor] = useState("");
     const [body, setBody] = useState("");
+    const [image, setImage] = useState("");
 
     const saveTitle = (e) => {
         setTitle(e.target.value);
@@ -16,6 +17,10 @@ const ListNotices = (props) => {
 
     const saveBody = (e) => {
         setBody(e.target.value);
+    };
+
+    const saveImage = (e) => {
+        setImage(e.target.value);
     };
 
     const showOptions = (index) => {
@@ -32,73 +37,89 @@ const ListNotices = (props) => {
     return (
         <>
             <div className="ListNotices-area">
-                <h1>{props.items.title}</h1>
-                <h4>Autor: {props.items.author}</h4>
-                <p>{props.items.body}</p>
-                <div>
-                    <button
-                        onClick={() => {
-                            showOptions(props.index);
-                        }}
-                        className="ListNotices-btn-edit"
-                    >
-                        <span class="material-symbols-outlined">edit</span>
-                    </button>
-                    <button
-                        className="ListNotices-btn-delete"
-                        onClick={() => {
-                            // Utilizando a function passada como props
-                            props.fcDelNotice(props.index);
-                        }}
-                    >
-                        <span class="material-symbols-outlined">delete</span>
-                    </button>
-                    <div className="ListNotices-form">
-                        <form>
-                            <div>
-                                <input
-                                    type="text"
-                                    placeholder="Título"
-                                    onChange={saveTitle}
-                                />
-                            </div>
-                            <div>
-                                <input
-                                    type="text"
-                                    placeholder="Autor"
-                                    onChange={saveAuthor}
-                                />
-                            </div>
-                            <div>
-                                <input
-                                    type="text"
-                                    placeholder="Notícia"
-                                    onChange={saveBody}
-                                />
-                            </div>
-                            <div>
-                                <button
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        props.fcEditNotice(
-                                            props.index,
-                                            title,
-                                            author,
-                                            body
-                                        );
-                                    }}
-                                    className="ListNotice-btn"
-                                >
-                                    <span class="material-symbols-outlined">
-                                        done
-                                    </span>
-                                </button>
-                            </div>
-                        </form>
+                <div className="ListNotices-img">
+                    <figure>
+                        <img src={props.items.image} alt={props.items.title} />
+                    </figure>
+                </div>
+                <div className="ListNotices-txt">
+                    <h1>{props.items.title}</h1>
+                    <h4>Autor: {props.items.author}</h4>
+                    <p>{props.items.body}</p>
+                    <div>
+                        <button
+                            onClick={() => {
+                                showOptions(props.index);
+                            }}
+                            className="ListNotices-btn-edit"
+                        >
+                            <span class="material-symbols-outlined">edit</span>
+                        </button>
+                        <button
+                            className="ListNotices-btn-delete"
+                            onClick={() => {
+                                props.fcDelNotice(props.index);
+                            }}
+                        >
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>
+                        </button>
+                        <div className="ListNotices-form">
+                            <form>
+                                <div>
+                                    <input
+                                        type="text"
+                                        placeholder="Título"
+                                        onChange={saveTitle}
+                                    />
+                                </div>
+                                <div>
+                                    <input
+                                        type="text"
+                                        placeholder="Autor"
+                                        onChange={saveAuthor}
+                                    />
+                                </div>
+                                <div>
+                                    <input
+                                        type="text"
+                                        placeholder="Notícia"
+                                        onChange={saveBody}
+                                    />
+                                </div>
+                                <div>
+                                    <input
+                                        type="url"
+                                        placeholder="URL da imagem"
+                                        onChange={saveImage}
+                                    />
+                                </div>
+                                <div>
+                                    <button
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            props.fcEditNotice(
+                                                props.index,
+                                                title,
+                                                author,
+                                                body,
+                                                image
+                                            );
+                                        }}
+                                        className="ListNotice-btn"
+                                    >
+                                        <span class="material-symbols-outlined">
+                                            done
+                                        </span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <div className="ListNotices-barr"></div>
                 </div>
             </div>
+            <div className="ListNotices-barr"></div>
         </>
     );
 };
