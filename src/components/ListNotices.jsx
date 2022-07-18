@@ -77,6 +77,7 @@ const ListNotices = (props) => {
                                         type="text"
                                         placeholder="Título"
                                         onChange={saveTitle}
+                                        required
                                     />
                                 </div>
                                 <div>
@@ -84,6 +85,7 @@ const ListNotices = (props) => {
                                         type="text"
                                         placeholder="Autor"
                                         onChange={saveAuthor}
+                                        required
                                     />
                                 </div>
                                 <div>
@@ -91,6 +93,7 @@ const ListNotices = (props) => {
                                         type="text"
                                         placeholder="Notícia"
                                         onChange={saveBody}
+                                        required
                                     />
                                 </div>
                                 <div>
@@ -98,6 +101,7 @@ const ListNotices = (props) => {
                                         type="url"
                                         placeholder="URL da imagem"
                                         onChange={saveImage}
+                                        required
                                     />
                                 </div>
                                 <div>
