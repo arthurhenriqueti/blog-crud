@@ -91,20 +91,18 @@ const Home = () => {
             <main className="home-area">
                 <div className="home-list container">
                     <h2>Últimas notícias</h2>
-                    {notices
-                        .map((element, index) => {
-                            return (
-                                <div key={index}>
-                                    <ListNotices
-                                        items={element}
-                                        index={index}
-                                        fcDelNotice={delNotice}
-                                        fcEditNotice={editNotice}
-                                    />
-                                </div>
-                            );
-                        })
-                        .reverse()}
+                    {notices.map((element, index) => {
+                        return (
+                            <div key={index}>
+                                <ListNotices
+                                    items={element}
+                                    index={index}
+                                    fcDelNotice={delNotice}
+                                    fcEditNotice={editNotice}
+                                />
+                            </div>
+                        );
+                    })}
                     <div className="home-btn-area">
                         <button className="home-btn" onClick={showForm}>
                             <span className="material-symbols-outlined">
@@ -146,7 +144,9 @@ const Home = () => {
                     </div>
                     <div className="home-btn-area">
                         <button onClick={addNotice} className="home-btn">
-                            <span class="material-symbols-outlined">done</span>
+                            <span className="material-symbols-outlined">
+                                done
+                            </span>
                         </button>
                     </div>
                 </form>

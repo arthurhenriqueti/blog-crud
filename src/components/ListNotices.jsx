@@ -56,7 +56,9 @@ const ListNotices = (props) => {
                             }}
                             className="ListNotices-btn-edit"
                         >
-                            <span class="material-symbols-outlined">edit</span>
+                            <span className="material-symbols-outlined">
+                                edit
+                            </span>
                         </button>
                         <button
                             className="ListNotices-btn-delete"
@@ -64,7 +66,7 @@ const ListNotices = (props) => {
                                 props.fcDelNotice(props.index);
                             }}
                         >
-                            <span class="material-symbols-outlined">
+                            <span className="material-symbols-outlined">
                                 delete
                             </span>
                         </button>
@@ -112,7 +114,7 @@ const ListNotices = (props) => {
                                         }}
                                         className="ListNotice-btn"
                                     >
-                                        <span class="material-symbols-outlined">
+                                        <span className="material-symbols-outlined">
                                             done
                                         </span>
                                     </button>
