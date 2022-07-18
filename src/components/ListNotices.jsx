@@ -42,7 +42,7 @@ const ListNotices = (props) => {
                         }}
                         className="ListNotices-btn-edit"
                     >
-                        Editar
+                        <span class="material-symbols-outlined">edit</span>
                     </button>
                     <button
                         className="ListNotices-btn-delete"
@@ -51,7 +51,7 @@ const ListNotices = (props) => {
                             props.fcDelNotice(props.index);
                         }}
                     >
-                        Deletar
+                        <span class="material-symbols-outlined">delete</span>
                     </button>
                     <div className="ListNotices-form">
                         <form>
@@ -89,7 +89,9 @@ const ListNotices = (props) => {
                                     }}
                                     className="ListNotice-btn"
                                 >
-                                    Alterar
+                                    <span class="material-symbols-outlined">
+                                        done
+                                    </span>
                                 </button>
                             </div>
                         </form>

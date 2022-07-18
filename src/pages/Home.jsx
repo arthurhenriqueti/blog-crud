@@ -25,6 +25,12 @@ const Home = () => {
         element.style.display = "none";
     };
 
+    const hideListNoticesForm = (index) => {
+        const element =
+            document.getElementsByClassName("ListNotices-form")[index];
+        element.style.display = "none";
+    };
+
     const addNotice = (e) => {
         e.preventDefault();
         setNotices([
@@ -37,7 +43,6 @@ const Home = () => {
         ]);
         alert("Notícia cadastrada com sucesso!");
         hideForm();
-        console.log(notices);
     };
 
     const delNotice = (index) => {
@@ -50,9 +55,8 @@ const Home = () => {
     };
 
     const editNotice = (index, title, author, body) => {
-        // Copiando o array
         const newArray = notices.slice();
-        // Removendo o elemento do index atual
+        // Removendo o elemento do index atual e adicionando um novo
         newArray.splice(index, 1, {
             title: title,
             author: author,
@@ -60,6 +64,7 @@ const Home = () => {
         });
         setNotices(newArray);
         alert("Notícia alterada com sucesso!");
+        hideListNoticesForm(index);
     };
 
     const saveTitle = (e) => {
@@ -97,7 +102,9 @@ const Home = () => {
                         .reverse()}
                     <div className="home-btn-area">
                         <button className="home-btn" onClick={showForm}>
-                            Cadastrar
+                            <span className="material-symbols-outlined">
+                                add
+                            </span>
                         </button>
                     </div>
                 </div>
@@ -126,7 +133,9 @@ const Home = () => {
                         </div>
                         <div className="home-btn-area">
                             <button onClick={addNotice} className="home-btn">
-                                Cadastrar
+                                <span class="material-symbols-outlined">
+                                    done
+                                </span>
                             </button>
                         </div>
                     </form>
