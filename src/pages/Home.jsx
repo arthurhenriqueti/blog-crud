@@ -48,9 +48,7 @@ const Home = () => {
     };
 
     const delNotice = (index) => {
-        // Copiando o array
         const newArray = notices.slice();
-        // Removendo o elemento do index atual
         newArray.splice(index, 1);
         setNotices(newArray);
         alert("Notícia deletada com sucesso!");
@@ -58,7 +56,6 @@ const Home = () => {
 
     const editNotice = (index, title, author, body, image) => {
         const newArray = notices.slice();
-        // Removendo e adicionando um novo ao mesmo index
         newArray.splice(index, 1, {
             title: title,
             author: author,
