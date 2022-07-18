@@ -1,3 +1,5 @@
+@import "../styles/mixins.scss";
+
 .home-form {
     display: none;
     position: absolute;
@@ -6,18 +8,14 @@
     align-items: center;
     width: 100%;
     min-height: calc(100vh - 90px);
-    background-color: rgba(#1e4c9a, 0.8);
+    background-color: rgba($collorPrimary, 0.8);
 
     .home-btn-area {
         margin-top: 20px;
 
         .home-btn {
-            padding: 10px 20px;
-            border-radius: 8px;
-            background-color: #06aa48;
-            color: #fff;
-            border: 0px;
-            cursor: pointer;
+            @include btn;
+            background-color: $collorAccept;
         }
     }
 }
@@ -34,6 +32,7 @@
 
         h2 {
             margin-top: 20px;
+            margin-bottom: 20px;
         }
     }
 
@@ -42,12 +41,8 @@
         margin-bottom: 20px;
 
         .home-btn {
-            padding: 10px 20px;
-            border-radius: 8px;
-            background-color: #06aa48;
-            color: #fff;
-            border: 0px;
-            cursor: pointer;
+            @include btn;
+            background-color: $collorAccept;
         }
     }
 }

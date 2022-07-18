@@ -1,7 +1,9 @@
+@import "../styles/mixins.scss";
+
 header {
     width: 100%;
     min-height: 90px;
-    background-color: #1e4c9a;
+    background-color: $collorPrimary;
     display: flex;
     justify-content: center;
     align-items: center;

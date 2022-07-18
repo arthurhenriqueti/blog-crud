@@ -1,3 +1,5 @@
+@import "../styles/mixins.scss";
+
 .ListNotices-barr {
     margin-top: 20px;
     width: 100%;
@@ -34,23 +36,15 @@
     .ListNotice-btn {
         margin-top: 10px;
         margin-right: 10px;
-        padding: 10px 20px;
-        border-radius: 8px;
-        background-color: #1e4c9a;
-        color: #fff;
-        border: 0px;
-        cursor: pointer;
+        background-color: $collorPrimary;
         display: inline;
+        @include btn;
     }
     .ListNotices-btn-delete {
         margin-top: 10px;
-        padding: 10px 20px;
-        border-radius: 8px;
-        background-color: #c4170c;
-        color: #fff;
-        border: 0px;
-        cursor: pointer;
+        background-color: $collorSecundary;
         display: inline;
+        @include btn;
     }
     p {
         margin-top: 20px;

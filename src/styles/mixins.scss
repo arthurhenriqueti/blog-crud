@@ -1,0 +1,11 @@
+$collorPrimary: #1e4c9a;
+$collorSecundary: #c4170c;
+$collorAccept: #06aa48;
+
+@mixin btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #fff;
+    border: 0px;
+    cursor: pointer;
+}
