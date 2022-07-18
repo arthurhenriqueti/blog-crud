@@ -19,6 +19,8 @@ const Home = () => {
         } else {
             element.style.display = "flex";
         }
+
+        window.scrollTo(0, 0);
     };
 
     const hideForm = () => {
@@ -111,46 +113,44 @@ const Home = () => {
                         </button>
                     </div>
                 </div>
-                <div className="home-form">
-                    <form>
-                        <div>
-                            <input
-                                type="text"
-                                placeholder="Título"
-                                onChange={saveTitle}
-                            />
-                        </div>
-                        <div>
-                            <input
-                                type="text"
-                                placeholder="Autor"
-                                onChange={saveAuthor}
-                            />
-                        </div>
-                        <div>
-                            <input
-                                type="text"
-                                placeholder="Notícia"
-                                onChange={saveBody}
-                            />
-                        </div>
-                        <div>
-                            <input
-                                type="url"
-                                placeholder="URL da imagem"
-                                onChange={saveImage}
-                            />
-                        </div>
-                        <div className="home-btn-area">
-                            <button onClick={addNotice} className="home-btn">
-                                <span class="material-symbols-outlined">
-                                    done
-                                </span>
-                            </button>
-                        </div>
-                    </form>
-                </div>
             </main>
+            <div className="home-form">
+                <form>
+                    <div>
+                        <input
+                            type="text"
+                            placeholder="Título"
+                            onChange={saveTitle}
+                        />
+                    </div>
+                    <div>
+                        <input
+                            type="text"
+                            placeholder="Autor"
+                            onChange={saveAuthor}
+                        />
+                    </div>
+                    <div>
+                        <input
+                            type="text"
+                            placeholder="Notícia"
+                            onChange={saveBody}
+                        />
+                    </div>
+                    <div>
+                        <input
+                            type="url"
+                            placeholder="URL da imagem"
+                            onChange={saveImage}
+                        />
+                    </div>
+                    <div className="home-btn-area">
+                        <button onClick={addNotice} className="home-btn">
+                            <span class="material-symbols-outlined">done</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
         </>
     );
 };

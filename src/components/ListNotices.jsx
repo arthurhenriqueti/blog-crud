@@ -36,10 +36,13 @@ const ListNotices = (props) => {
 
     return (
         <>
-            <div className="ListNotices-area">
+            <article className="ListNotices-area">
                 <div className="ListNotices-img">
                     <figure>
                         <img src={props.items.image} alt={props.items.title} />
+                        <figcaption>
+                            <span>Imagem: {props.items.title}</span>
+                        </figcaption>
                     </figure>
                 </div>
                 <div className="ListNotices-txt">
@@ -118,7 +121,7 @@ const ListNotices = (props) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </article>
             <div className="ListNotices-barr"></div>
         </>
     );
