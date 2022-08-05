@@ -90,7 +90,7 @@ const Home = () => {
             <Header />
             <main className="home-area">
                 <div className="home-list container">
-                    <h2>Últimas notícias</h2>
+                    <h2>Notícias</h2>
                     {notices.map((element, index) => {
                         return (
                             <div key={index}>

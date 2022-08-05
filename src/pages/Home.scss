@@ -2,12 +2,12 @@
 
 .home-form {
     display: none;
-    position: absolute;
-    top: 90px;
+    position: fixed;
+    top: 0px;
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: calc(100vh - 90px);
+    min-height: 100vh;
     background-color: rgba($collorPrimary, 0.8);
 
     .home-btn-area {
